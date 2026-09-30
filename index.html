@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07152d">
+<title>Para mi Meny 🏁💙</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh; overflow-x:hidden; color:#fff;
+  font-family:Quicksand,system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(16,111,211,.32),transparent 35%),
+    linear-gradient(180deg,#020914,#071a36 58%,#020914);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 1.5px),
+    radial-gradient(circle,#58c8ff 1px,transparent 1.5px);
+  background-size:85px 85px,130px 130px;
+  background-position:10px 20px,45px 70px;
+  animation:stars 12s linear infinite;
+}
+@keyframes stars{to{background-position:95px 120px,175px 10px}}
+
+.screen{min-height:100vh;display:none;align-items:center;justify-content:center;padding:24px}
+.screen.active{display:flex}
+.card{
+  width:min(92vw,720px); border:1px solid rgba(86,190,255,.35);
+  background:rgba(3,16,38,.88); backdrop-filter:blur(12px);
+  border-radius:28px; box-shadow:0 0 50px rgba(0,130,255,.18);
+}
+.secret{padding:38px 25px;text-align:center}
+.logo{font-family:"Bebas Neue";letter-spacing:4px;color:#ffe52b;font-size:clamp(2.5rem,12vw,5rem);
+ text-shadow:3px 3px 0 #e32222,-2px 0 #e32222}
+.secret h2{font-size:1.15rem;margin:8px 0 22px;color:#bfe9ff}
+input{
+ width:100%;max-width:380px;padding:15px 18px;border-radius:15px;border:1px solid #2d79ae;
+ background:#020b1b;color:#fff;text-align:center;font-size:1rem;outline:none
+}
+input:focus{box-shadow:0 0 0 3px rgba(45,184,255,.16)}
+button{
+ border:0;border-radius:999px;padding:13px 24px;margin-top:13px;
+ background:linear-gradient(90deg,#20b9ff,#1575ff);color:white;font-weight:700;cursor:pointer;
+ box-shadow:0 8px 24px rgba(0,137,255,.25)
+}
+#error{height:22px;margin-top:9px;color:#ff6b78;font-size:.85rem}
+
+.loader{padding:35px 25px;text-align:center}
+.loader h1{font-family:"Bebas Neue";letter-spacing:2px;font-size:clamp(2rem,9vw,4rem);color:#8edcff}
+.speed{
+ width:180px;height:90px;margin:28px auto 5px;border-radius:180px 180px 0 0;
+ border:5px solid #22bfff;border-bottom:0;position:relative;box-shadow:0 0 25px #168bff66
+}
+.speed:after{content:"";position:absolute;bottom:-2px;left:50%;width:4px;height:70px;background:#ff334d;
+ transform-origin:bottom;animation:needle 1.8s ease-in-out forwards}
+@keyframes needle{from{transform:rotate(-65deg)}to{transform:rotate(55deg)}}
+.kmh{font-family:"Bebas Neue";font-size:2rem;color:#fff}
+.progress{height:7px;background:#102746;border-radius:10px;overflow:hidden;margin:22px auto;width:min(80%,400px)}
+.progress i{display:block;height:100%;width:0;background:#29c5ff;animation:load 2.5s forwards}
+@keyframes load{to{width:100%}}
+
+.main{padding:25px 18px 32px;text-align:center;position:relative;overflow:hidden}
+.badge{display:inline-block;color:#ffdf24;font-weight:700;font-size:.8rem;letter-spacing:2px;margin-bottom:5px}
+.title{font-family:"Bebas Neue";letter-spacing:2px;font-size:clamp(2.4rem,12vw,5.2rem);line-height:.95;
+ text-shadow:0 0 22px rgba(41,188,255,.4)}
+.title span{color:#38c7ff}
+.subtitle{font-size:1rem;color:#c9e8ff;margin:12px auto 5px;max-width:580px;line-height:1.55}
+.moto-wrap{position:relative;margin:8px auto 0;max-width:650px}
+.moto{
+ width:100%;max-height:390px;object-fit:contain;filter:drop-shadow(0 22px 20px rgba(0,0,0,.65));
+ animation:float 3.2s ease-in-out infinite
+}
+@keyframes float{50%{transform:translateY(-8px)}}
+.speedline{
+ position:absolute;height:3px;border-radius:3px;background:#44caff;left:-20px;
+ box-shadow:0 0 10px #44caff;animation:drive 2.2s linear infinite;opacity:.7
+}
+.s1{top:45%;width:100px}.s2{top:60%;width:60px;animation-delay:.5s}.s3{top:72%;width:140px;animation-delay:1s}
+@keyframes drive{from{transform:translateX(-120px);opacity:0}30%{opacity:.8}to{transform:translateX(760px);opacity:0}}
+
+.message{
+ margin:0 auto 20px;max-width:600px;padding:18px;border-radius:20px;
+ background:linear-gradient(135deg,rgba(20,116,196,.18),rgba(255,255,255,.035));
+ border:1px solid rgba(85,191,255,.25);line-height:1.65
+}
+.message b{color:#45c9ff}
+.nicknames{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:15px auto 22px}
+.nick{padding:7px 12px;border-radius:999px;background:#0b2a4d;border:1px solid #1b6b9e;color:#dff5ff;font-size:.82rem}
+.note{font-size:.78rem;color:#8eafc9}
+.heart{position:absolute;color:#32bfff;animation:heart 5s linear infinite;opacity:0}
+@keyframes heart{0%{transform:translateY(40px) scale(.5);opacity:0}20%{opacity:.8}100%{transform:translateY(-450px) translateX(80px) scale(1.2);opacity:0}}
+
+.replay{background:#0b2a4d;border:1px solid #1e608e;box-shadow:none}
+@media(max-width:480px){
+ .screen{padding:12px}.main{padding:24px 12px 28px}.moto{max-height:290px}
+}
+</style>
+</head>
+<body>
+
+<section id="secret" class="screen active">
+  <div class="card secret">
+    <div class="logo">HOT WHEELS</div>
+    <h2>Hay una sorpresa guardada para ti 🏁💙</h2>
+    <p style="color:#86a9c6;font-size:.9rem;margin-bottom:16px">Solo mi persona favorita sabe la palabra secreta...</p>
+    <input id="code" type="password" placeholder="Escribe la palabra secreta">
+    <br>
+    <button onclick="unlock()">🏁 Arrancar</button>
+    <div id="error"></div>
+  </div>
+</section>
+
+<section id="loader" class="screen">
+  <div class="card loader">
+    <h1>Cargando tu Hot Wheels...</h1>
+    <div class="speed"></div>
+    <div class="kmh">100 KM/H</div>
+    <div class="progress"><i></i></div>
+    <p style="color:#8db4d0">Preparando una edición que solo podía ser tuya 💙</p>
+  </div>
+</section>
+
+<section id="main" class="screen">
+  <div class="card main">
+    <span class="heart" style="left:8%;bottom:5%">♥</span>
+    <span class="heart" style="right:12%;bottom:0%;animation-delay:1.5s">♥</span>
+    <span class="heart" style="left:45%;bottom:-5%;animation-delay:3s">♥</span>
+
+    <div class="badge">EDICIÓN ESPECIAL • SOLO PARA TI</div>
+    <h1 class="title">FELIZ DÍA DE<br><span>HOT WHEELS</span> 🏁</h1>
+
+    <p class="subtitle">
+      Mi <b>Meny</b>, estuve pensando cuál sería tu Hot Wheels...
+      y la respuesta fue demasiado obvia.
+    </p>
+
+    <div class="moto-wrap">
+      <span class="speedline s1"></span><span class="speedline s2"></span><span class="speedline s3"></span>
+      <img class="moto" src="moto-hotwheels.png" alt="Moto Hot Wheels personalizada">
+    </div>
+
+    <div class="message">
+      Porque <b>en tu caso no podía ser un carrito</b>...<br>
+      <strong>tenía que ser una moto. 🏍️💙</strong><br><br>
+      Una moto que se parezca a ti: bonita, con estilo y lista para salir
+      a recorrer cualquier camino conmigo.
+    </div>
+
+    <div class="nicknames">
+      <span class="nick">Meny 💙</span>
+      <span class="nick">Panzón 🥹</span>
+      <span class="nick">Pancita de Winnie Pooh 🧸</span>
+      <span class="nick">Amor 🫶🏻</span>
+      <span class="nick">Mi amor ❤️</span>
+    </div>
+
+    <p class="note">
+      Y sí... entre tantos Hot Wheels, yo elegiría el tuyo una y otra vez. 🏁
+    </p>
+
+    <button class="replay" onclick="location.reload()">↻ Volver a empezar</button>
+  </div>
+</section>
+
+<script>
+const SECRET = "MENY27"; // ← Puedes cambiar aquí la palabra secreta.
+
+function unlock(){
+  const value = document.getElementById("code").value.trim().toUpperCase();
+  const error = document.getElementById("error");
+
+  if(value === SECRET){
+    document.getElementById("secret").classList.remove("active");
+    document.getElementById("loader").classList.add("active");
+
+    setTimeout(()=>{
+      document.getElementById("loader").classList.remove("active");
+      document.getElementById("main").classList.add("active");
+    },2800);
+  }else{
+    error.textContent = "Mmm... esa no es la palabra secreta 🤭💙";
+    document.getElementById("code").value = "";
+  }
+}
+
+document.getElementById("code").addEventListener("keydown",e=>{
+  if(e.key==="Enter") unlock();
+});
+</script>
+</body>
+</html>
